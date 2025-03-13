@@ -1,18 +1,25 @@
+import java.util.Arrays;
+
 public class HRApp {
     public static void main(String[] args) {
         System.out.println("Application starting");
 
-        Employee e1 = new Employee("Darrell Knowles");
-        e1.setEmployeeId(53);
-        e1.setSalary(89000.31);
+        Employee e1 = new Employee("Darrell Knowles", 1, 89000);
 
-        Department d1 = new Department("IT", 10);
-        d1.setCapacity(10);
-        d1.setName("IT");
+        Employee e2 = new Employee("Sarah Cotlin", 2, 90200 );
 
-        System.out.println("Mr. " + e1.getName() + " employee id is " + e1.getEmployeeId() + " and has a salary of " + e1.getSalary());
-        System.out.println("The " + d1.getName() + " department has a total of " + d1.getCapacity() + " employees.");
+        Department d1 = new Department("IT");
 
+        d1.addEmployee(e1);
+        d1.addEmployee(e2);
+        d1.addEmployee(new Employee("Jason Myers", 3, 101090));
 
+        Employee[] emps = d1.getEmployees();
+        for(Employee emp : emps){
+            System.out.println(emp);
+        }
+        System.out.println(d1.getAverageSalary());
+        System.out.println(d1.getTotalSalary());
+        System.out.println("Employee: " + d1.getEmployeeById(5));
     }
 }

@@ -3,15 +3,6 @@ public class Employee{
     private int employeeId;
     private double salary;
 
-    // @Override
-    // public String toString(){
-    //     return employeeId + ", " + name + ", " + salary;
-    // }
-
-    Employee(String name){
-        this.name = name;
-    }
-
     public String getName(){
         return name;
     }
@@ -35,4 +26,15 @@ public class Employee{
     public void setSalary(double salary){
         this.salary = salary;
     }
+
+    public Employee(String name, int employeeId, double salary){
+        this.name = name;
+        this.employeeId = employeeId;
+        this.salary = salary;
+    }
+
+    public String toString(){
+        return "Employee: " + getName() + " " + getEmployeeId() + " has a salary of " + getSalary();
+    }
+
 }
